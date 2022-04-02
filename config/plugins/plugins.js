@@ -1,7 +1,7 @@
 module.exports = {
   upload: {
     config: {
-      provider: "strapi-provider-upload-do",
+      provider: "strapi-provider-upload-dos",
       providerOptions: {
         key: process.env.DO_SPACE_ACCESS_KEY,
         secret: process.env.DO_SPACE_SECRET_KEY,
