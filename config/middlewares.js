@@ -42,6 +42,41 @@
 // ];
 
 
+// module.exports = ({ env }) => [
+//   "strapi::errors",
+//   "strapi::cors",
+//   "strapi::poweredBy",
+//   "strapi::logger",
+//   "strapi::query",
+//   "strapi::body",
+//   "strapi::favicon",
+//   "strapi::public",
+//   {
+//     name: "strapi::security",
+//     config: {
+//       contentSecurityPolicy: {
+//         useDefaults: true,
+//         directives: {
+//           "connect-src": ["'self'", "https:"],
+//           "img-src": [
+//             "'self'",
+//             "data:",
+//             "blob:",
+//             `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
+//           ],
+//           "media-src": [
+//             "'self'",
+//             "data:",
+//             "blob:",
+//             `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
+//           ],
+//           upgradeInsecureRequests: null,
+//         },
+//       },
+//     },
+//   },
+// ];
+
 module.exports = ({ env }) => [
   "strapi::errors",
   "strapi::cors",
@@ -62,13 +97,13 @@ module.exports = ({ env }) => [
             "'self'",
             "data:",
             "blob:",
-            `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
+            `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
           ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
-            `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
+            `${env("DO_SPACE_BUCKET")}.${env("DO_SPACE_ENDPOINT")}`,
           ],
           upgradeInsecureRequests: null,
         },
