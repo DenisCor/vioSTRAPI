@@ -46,4 +46,4 @@ module.exports = ({ env }) => [
   },
 ];
 
-console.log('`${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`', `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`)
+// console.log('`${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`', `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`)
