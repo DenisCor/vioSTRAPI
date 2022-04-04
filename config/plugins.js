@@ -2,15 +2,16 @@ module.exports = ({env}) => ({
   // ...
   upload: {
     config: {
-      provider: "strapi-provider-upload-do",
+      provider: "strapi-provider-upload-do", 
       providerOptions: {
-        key: 'TNVWGLDCSMFHNFGLL6D3',
-        secret: 'UnqqnksyeheWKKhhJ+3xTN2btfOHBy//VR5h2RqP4/4',
+        key: env('DO_SPACE_ACCESS_KEY'),
+        secret: env('DO_SPACE_SECRET_KEY'),
         endpoint: 'fra1.digitaloceanspaces.com',
-        space: 'v-space',
-        // directory: "media", // optional
-      },
+        space: env('DO_SPACE_BUCKET'),
+        directory: env('DO_SPACE_DIRECTORY'),
+        // cdn: env('DO_SPACE_CDN'),
+      }
     },
-  },
+  }, 
   // ...
-});
+})
