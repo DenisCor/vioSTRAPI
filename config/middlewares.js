@@ -11,8 +11,15 @@
 //   'strapi::public',
 // ];
 
-module.exports = [
+module.exports = ({ env }) => [
   "strapi::errors",
+  "strapi::cors",
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::favicon",
+  "strapi::public",
   {
     name: "strapi::security",
     config: {
@@ -24,19 +31,19 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "*.digitaloceanspaces.com"
+            `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
           ],
-          "media-src": ["'self'", "data:", "blob:"],
+          "media-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`,
+          ],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  "strapi::cors",
-  "strapi::poweredBy",
-  "strapi::logger",
-  "strapi::query",
-  "strapi::body",
-  "strapi::favicon",
-  "strapi::public",
 ];
+
+console.log('`${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`', `${process.env.DO_SPACE_BUCKET}.${process.env.DO_SPACE_ENDPOINT}`)
