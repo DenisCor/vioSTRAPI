@@ -24,7 +24,7 @@ module.exports = [
             "'self'",
             "data:",
             "blob:",
-            "*ams3.digitaloceanspaces.com"
+            "*.digitaloceanspaces.com"
           ],
           "media-src": ["'self'", "data:", "blob:"],
           upgradeInsecureRequests: null,
