@@ -4,10 +4,10 @@ module.exports = ({env}) => ({
     config: {
       provider: "strapi-provider-upload-do",
       providerOptions: {
-        key: env('DO_SPACE_ACCESS_KEY'),
-        secret: env('DO_SPACE_SECRET_KEY'),
-        endpoint: env('DO_SPACE_ENDPOINT'),
-        space: env('DO_SPACE_BUCKET'),
+        key: 'TNVWGLDCSMFHNFGLL6D3',
+        secret: 'UnqqnksyeheWKKhhJ+3xTN2btfOHBy//VR5h2RqP4/4',
+        endpoint: 'fra1.digitaloceanspaces.com',
+        space: 'v-space',
         // directory: "media", // optional
       },
     },
